@@ -23,14 +23,14 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 9
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'pnpm'
-          cache-dependency-path: './frontend/pnpm-lock.yaml'
+          cache-dependency-path: 'pnpm-lock.yaml'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -89,8 +89,8 @@ jobs:
         if: success()
         run: |
           echo "🚀 Deployment successful!"
-          echo "📊 Version: 1.6.3"
-          echo "🏷️  Template Version: 1.6.3"
+          echo "📊 Version: 1.6.7"
+          echo "🏷️  Template Version: 1.6.7"
           echo "🔧 Core Version: 0.4.1"
           echo "🌐 URL: https://evervibestudios.com"
           echo "✅ Health check: Passed"

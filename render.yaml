@@ -1,0 +1,61 @@
+services:
+  - type: web
+    name: evs-main-site
+    env: node
+    region: frankfurt  # EU region closest to target audience
+    plan: starter  # Can be upgraded based on traffic needs
+    buildCommand: cd frontend && corepack enable && pnpm install --frozen-lockfile && pnpm build
+    startCommand: cd frontend && pnpm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    branch: main
+    envVars:
+      # Node Environment
+      - key: NODE_ENV
+        value: production
+      
+      # Public Site Configuration
+      - key: NEXT_PUBLIC_SITE_NAME
+        value: EverVibe Studios
+      - key: NEXT_PUBLIC_SITE_URL
+        value: https://evervibestudios.com
+      - key: NEXT_PUBLIC_CONTACT_EMAIL
+        value: info@evervibestudios.com
+      
+      # Rate Limiting
+      - key: RATE_LIMIT_WINDOW
+        value: 5m
+      - key: RATE_LIMIT_MAX
+        value: 5
+      - key: CONTACT_MIN_MESSAGE_LENGTH
+        value: 5
+      
+      # CMS Configuration (Set in Render Dashboard)
+      - key: CMS_BASE_URL
+        sync: false  # Set in dashboard: https://cms.evervibestudios.com
+      - key: CMS_API_TOKEN
+        sync: false  # SECRET - Set in dashboard
+      - key: CMS_PREVIEW_SECRET
+        sync: false  # SECRET - Set in dashboard
+      
+      # SMTP Configuration (Set in Render Dashboard)
+      - key: SMTP_HOST
+        sync: false  # Set in dashboard
+      - key: SMTP_PORT
+        sync: false  # Set in dashboard
+      - key: SMTP_SECURE
+        sync: false  # Set in dashboard
+      - key: SMTP_USER
+        sync: false  # Set in dashboard
+      - key: SMTP_PASS
+        sync: false  # SECRET - Set in dashboard
+      
+      # Optional: Core Health URL (Set in Render Dashboard)
+      - key: CORE_HEALTH_URL
+        sync: false  # Optional - Set in dashboard if Core monitoring needed
+      
+      # Optional: Upstash Redis (Set in Render Dashboard)
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false  # Optional - Set in dashboard if using Upstash
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false  # SECRET - Optional - Set in dashboard

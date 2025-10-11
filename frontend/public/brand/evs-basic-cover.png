@@ -1,0 +1,13 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#f8fafc"/>
+  <rect x="0" y="0" width="800" height="100" fill="#6366f1"/>
+  <text x="50%" y="50" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" dominant-baseline="middle">
+    EVS Basic Template
+  </text>
+  <text x="50%" y="225" font-family="Arial, sans-serif" font-size="48" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">
+    🚀
+  </text>
+  <text x="50%" y="280" font-family="Arial, sans-serif" font-size="24" fill="#64748b" text-anchor="middle" dominant-baseline="middle">
+    Premium Next.js Landing Page
+  </text>
+</svg>

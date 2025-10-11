@@ -1,0 +1,25 @@
+{
+  "name": "evs-main-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EverVibe Studios Main Site - Monorepo Root",
+  "scripts": {
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "keywords": [
+    "evervibe",
+    "nextjs",
+    "monorepo"
+  ],
+  "author": "EverVibe Studios",
+  "license": "MIT",
+  "packageManager": "pnpm@9.12.3",
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "eslint": "^9.37.0",
+    "prettier": "^3.3.3"
+  }
+}

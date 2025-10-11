@@ -89,8 +89,8 @@ jobs:
         if: success()
         run: |
           echo "🚀 Deployment successful!"
-          echo "📊 Version: 1.6.7"
-          echo "🏷️  Template Version: 1.6.7"
+          echo "📊 Version: 1.7.0"
+          echo "🏷️  Template Version: 1.7.0"
           echo "🔧 Core Version: 0.4.1"
           echo "🌐 URL: https://evervibestudios.com"
           echo "✅ Health check: Passed"
